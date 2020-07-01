@@ -1,2 +1,3 @@
 a,b,c = map(int,input().split())
-print((a+b)%c,((a%c)+(b%c))%c,(a*b)%c,((a%c)*(b%c))%c, sep='\n')
+d=(a+b)%c;e=a*b%c
+print(d,d,e,e,sep='\n')

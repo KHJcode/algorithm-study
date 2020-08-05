@@ -1,7 +1,11 @@
-n = int(input());color = []
-for _ in range(n):  color.append(list(map(int,input().split())))
-for i in range(1, n):
-    color[i][0] = min(color[i-1][2],color[i-1][1])+color[i][0]
-    color[i][1] = min(color[i-1][0],color[i-1][2])+color[i][1]
-    color[i][2] = min(color[i-1][0],color[i-1][1])+color[i][2]
-print(min(color[n-1][0],color[n-1][1],color[n-1][2]))
+n = int(input());
+colors = []
+for i in range(n):  colors.append(list(map(int,input().split())))
+for i in range(1,n):
+  now_array = colors[i-1]
+  colors[i][0] = colors[i][0] + min(now_array[1],now_array[2])
+  colors[i][1] = colors[i][1] + min(now_array[0],now_array[2])
+  colors[i][2] = colors[i][2] + min(now_array[0],now_array[1])
+
+now = colors[n-1]
+print(min(now[0],now[1],now[2]))

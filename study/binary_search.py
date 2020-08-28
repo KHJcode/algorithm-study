@@ -1,10 +1,16 @@
 def binarySearch(array, target):
-  mideIndex = len(array) // 2
-  indexValue = array[mideIndex]
-  return (mideIndex, indexValue)
+  start = 0
+  end = len(array)
+  while start <= end:
+    midIndex = (start + end) // 2
+    indexValue = array[midIndex]
 
+    if indexValue == target:  return midIndex
+    elif indexValue < target:  start = midIndex + 1
+    elif indexValue > target:  end = midIndex - 1
+  return -1
 
-data = [1,2,3,4,5,6,25,24,66,1233,342,10,0,3,13,34,4324]
+data = [1,2,3,4,5,6,25,4324,34234,14,4234,4324]
 
-result = binarySearch(data, 13)
+result = binarySearch(data, 14)
 print(result)

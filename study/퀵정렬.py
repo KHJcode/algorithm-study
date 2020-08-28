@@ -6,7 +6,7 @@ def quickSort(array):
   result = quickSort(less) + [pivot] + quickSort(greater)
   return result
 
-array_set1 = [40, 35, 27, 50, 75, 50, 27, 1, 4324, 2424, 1213, 3]
+example = [40, 35, 27, 50, 75, 50, 27, 1, 0, 4324, 2424, 1213, 3]
 
-result = quickSort(array_set1)
+result = quickSort(example)
 print(result)

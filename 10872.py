@@ -1,6 +1,9 @@
+def getFactorial(n):
+  if n == 1 or n == 0:  return 1
+  result = n * getFactorial(n - 1)
+  return result
+
 n = int(input())
-num = 1
-for j in range(2,n+1):
-    num *= j
-print(num)
-    
+
+result = getFactorial(n)
+print(result)

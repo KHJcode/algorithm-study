@@ -1,13 +1,14 @@
-n=int(input())
+def _1011_(a, b):
+  point = 1
+  count = 0
+  while a < b:
+    a += point
+    count += 1
+    if count % 2 == 0:  point += 1
+  return count
 
-for i in range(n):
-    x, y = map(int,input().split())
-    meeter=y-x 
-    sub=1
-    count =0
-    while(meeter>0):
-        meeter-=sub
-        count+=1
-        if count%2==0:
-            sub+=1
-    print(count)
+n = int(input())
+
+for _ in range(n):
+  a, b = map(int, input().split())
+  print(_1011_(a, b))

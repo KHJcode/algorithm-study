@@ -1,8 +1,4 @@
-n,x = map(int,input().split())
-array = list(map(int,input().split()))
-
-for i in range(n):
-      if array[i] < x:
-            print(array[i],'', end='')
-            
-      
+n, x = map(int, input().split())
+arr = list(map(int, input().split()))
+for i in arr:
+  if i < x:  print(i, end=' ')

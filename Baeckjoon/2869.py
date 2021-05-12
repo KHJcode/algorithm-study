@@ -1,5 +1,3 @@
-A, B, V = map(int,input().split())
-count = int((V-B)/(A-B))
-if (V-B) % (A-B) != 0:
-      count += 1
-print(count)
+a, b, v = map(int, input().split())
+score = (v - b) // (a - b)
+print(score if (v - b) % (a - b) == 0 else score + 1)

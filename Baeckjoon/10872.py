@@ -1,9 +1,5 @@
 def getFactorial(n):
-  if n == 1 or n == 0:  return 1
-  result = n * getFactorial(n - 1)
-  return result
+  if n < 2:  return 1
+  return n * getFactorial(n - 1)
 
-n = int(input())
-
-result = getFactorial(n)
-print(result)
+print(getFactorial(int(input())))

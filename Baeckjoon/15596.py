@@ -1,4 +1,4 @@
-def solve(a):
-  ans = 0
-  for i in a:  ans+=i
-  return ans
+def solve(arr):
+  _sum = 0
+  for i in arr:  _sum += i
+  return _sum

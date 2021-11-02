@@ -2,7 +2,7 @@ using System;
 public class Program {
   public static void Main()
   {
-    string[] input =  Console.ReadLine().Split();
+    string[] input = Console.ReadLine().Split();
     int[] numbers = Array.ConvertAll(input, int.Parse);
     int e = numbers[0];
     int f = numbers[1];

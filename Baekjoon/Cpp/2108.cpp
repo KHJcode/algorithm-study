@@ -28,7 +28,7 @@ int main() {
             m = i;
         }
     }
-    cout << round((float) s / (float) n) << "\n";
+    cout << (int) round((float) s / (float) n) << "\n";
     cout << v[n / 2] << "\n";
     cout << m << "\n";
     cout << v[n - 1] - v[0];

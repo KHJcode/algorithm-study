@@ -4,4 +4,4 @@ project(algorithm_study)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(algorithm_study
-        Baekjoon/Cpp/24542.cpp)
+        Baekjoon/Cpp/24913.cpp)

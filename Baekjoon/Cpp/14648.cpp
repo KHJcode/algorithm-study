@@ -17,7 +17,7 @@ ll sm(ll s, ll e) {
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
-    ll n, q, i, j, k, a, b, c, d, s;
+    ll n, q, i, k, a, b, c, d, s;
     cin >> n >> q;
     for (i = 1; i <= n; i++) {
         cin >> arr[i];

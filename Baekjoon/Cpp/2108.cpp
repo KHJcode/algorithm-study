@@ -1,36 +1,46 @@
-#include <iostream>
-#include <algorithm>
-#include <vector>
-#include <cmath>
+#include <bits/stdc++.h>
 
+using ll = long long;
 using namespace std;
 
-int m, s, arr[8001];
+ll arr[8001];
+
+ll get(ll x) {
+    return arr[x + 4000];
+}
 
 int main() {
-    vector<int> v;
-    int n, i, d, c;
-    scanf("%d", &n);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    ll n, d, i, c = 0, mx = 0;
+    vector<ll> v, s, j;
+    cin >> n;
     for (i = 0; i < n; i++) {
-        scanf("%d", &d);
+        cin >> d;
         v.push_back(d);
+        c += d;
+        if (get(d) == 0) {
+            s.push_back(d);
+        }
+        arr[d + 4000] += 1;
     }
     sort(v.begin(), v.end());
-    for (auto i: v)
-        arr[i + 4000] += 1;
-    for (auto i: v) {
-        s += i;
-        if (arr[m + 4000] < arr[i + 4000]) {
-            c = 1;
-            m = i;
-        } else if (arr[m + 4000] == arr[i + 4000] && c == 1 && m != i) {
-            c++;
-            m = i;
+    cout << round(double(c) / double(n)) + 0 << "\n";
+    cout << v[n / 2] << "\n";
+    for (auto i : s) {
+        if (get(i) > get(mx)) {
+            mx = i;
+            j.clear();
+            j.push_back(i);
+        } else if (get(i) == get(mx)) {
+            j.push_back(i);
         }
     }
-    cout << (int) round((float) s / (float) n) << "\n";
-    cout << v[n / 2] << "\n";
-    cout << m << "\n";
-    cout << v[n - 1] - v[0];
+    if (j.size() > 1) {
+        sort(j.begin(), j.end());
+        mx = j[1];
+    }
+    cout << mx << "\n";
+    cout << v[n - 1] - v[0] << "\n";
     return 0;
 }

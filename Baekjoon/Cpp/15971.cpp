@@ -9,7 +9,7 @@ vector<pair<int, int>> va[MAX];
 int b, res, gph[MAX];
 
 void rec(int x, int s, int mx) {
-    int v, i;
+    int i;
     if (gph[x] == 0 && res == 0) {
         gph[x] = 1;
         if (x == b) {

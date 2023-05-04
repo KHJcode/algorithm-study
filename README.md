@@ -15,4 +15,4 @@ Solve algorithm problems and write code.
 ## Profile
 
 [![Solved.ac
-프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=Kimhj4485)](https://solved.ac/Kimhj4485)
+프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=kimhj4485)](https://solved.ac/kimhj4485)

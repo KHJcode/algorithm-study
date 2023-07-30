@@ -1,75 +1,62 @@
 #include <bits/stdc++.h>
 
-using ll = long long;
 using namespace std;
+using ll = long long;
+using pll = pair<ll, ll>;
 
-ll arr[10000];
+struct TreeNode
+{
+    int left;
+    int right;
 
-ll to_ll(char c) {
-    return ll(c) - 65;
+    TreeNode(int left, int right) : left(left), right(right) {}
+};
+vector<TreeNode *> tree(26);
+
+void preorder(int node)
+{
+    if (node == -1)
+    {
+        return;
+    }
+    cout << char(node + 65);
+    preorder(tree[node]->left);
+    preorder(tree[node]->right);
 }
 
-void print(ll x) {
-    cout << char(x + 65);
+void inorder(char node)
+{
+    if (node == -1)
+    {
+        return;
+    }
+    inorder(tree[node]->left);
+    cout << char(node + 65);
+    inorder(tree[node]->right);
 }
 
-void preorder(ll x) {
-    print(arr[x]);
-    ll left = x * 2 + 1;
-    if (arr[left]) {
-        preorder(left);
+void postorder(int node)
+{
+    if (node == -1)
+    {
+        return;
     }
-    ll right = x * 2 + 2;
-    if (arr[right]) {
-        preorder(right);
-    }
+    postorder(tree[node]->left);
+    postorder(tree[node]->right);
+    cout << char(node + 65);
 }
 
-void inorder(ll x) {
-    ll left = x * 2 + 1;
-    if (arr[left]) {
-        inorder(left);
-    }
-    print(arr[x]);
-    ll right = x * 2 + 2;
-    if (arr[right]) {
-        inorder(right);
-    }
-}
-
-void postorder(ll x) {
-    ll left = x * 2 + 1;
-    if (arr[left]) {
-        postorder(left);
-    }
-    ll right = x * 2 + 2;
-    if (arr[right]) {
-        postorder(right);
-    }
-    print(arr[x]);
-}
-
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(0);
-    ll n, i, a, b, c, map[27];
-    char _a, _b, _c;
+    int n;
+    char a, b, c;
     cin >> n;
-    map[0] = 0;
-    arr[0] = 0;
-    for (i = 0; i < n; i++) {
-        cin >> _a >> _b >> _c;
-        a = to_ll(_a);
-        if (_b != '.') {
-            b = to_ll(_b);
-            map[b] = map[a] * 2 + 1;
-            arr[map[b]] = b;
-        }
-        if (_c != '.') {
-            c = to_ll(_c);
-            map[c] = map[a] * 2 + 2;
-            arr[map[c]] = c;
-        }
+    while (n--)
+    {
+        cin >> a >> b >> c;
+        tree[a - 65] = new TreeNode(b == '.' ? -1 : b - 65, c == '.' ? -1 : c - 65);
     }
     preorder(0);
     cout << "\n";
